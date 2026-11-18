@@ -38,6 +38,8 @@ body > main {
   --mark: light-dark(#bd502f, #f2a585);
   --ok: light-dark(#e3f1e8, #2d4838);
   --oktxt: light-dark(#25523d, #bedac8);
+  --latebg: light-dark(#fbe3da, #4a2c24);
+  --latetxt: light-dark(#8a2f14, #f6c1ab);
   background: var(--paper);
   color: var(--ink);
   font:
@@ -263,6 +265,77 @@ body > main {
   background: var(--ok);
   color: var(--oktxt);
 }
+#campus-stores .late {
+  background: var(--latebg);
+  color: var(--latetxt);
+  font-weight: 600;
+}
+#campus-stores .kit {
+  margin-top: 14px;
+}
+#campus-stores .kithead {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 0 8px;
+}
+#campus-stores .kithead small,
+#campus-stores .check small {
+  display: block;
+}
+#campus-stores .kit .row {
+  padding-left: 12px;
+}
+#campus-stores .followup {
+  margin-top: 5px;
+  padding: 5px 8px;
+  background: var(--memo);
+  color: var(--memotxt);
+  border-radius: 5px;
+  font-weight: 600;
+}
+#campus-stores .followup small {
+  color: inherit;
+  font-weight: 400;
+}
+#campus-stores .unit {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 10px 12px;
+  margin-top: 10px;
+}
+#campus-stores .check {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  cursor: pointer;
+}
+#campus-stores .check input {
+  width: 18px;
+  height: 18px;
+  margin: 2px 0 0;
+  accent-color: var(--sel);
+  flex-shrink: 0;
+}
+#campus-stores .unit:has(input[name="back"]:checked) {
+  border-color: var(--oktxt);
+  background: var(--ok);
+}
+#campus-stores .unit:has(input[name="back"]:checked) .stillout {
+  display: none;
+}
+#campus-stores .stillout {
+  margin: 10px 0 0 28px;
+}
+#campus-stores .error {
+  color: var(--latetxt);
+  font-weight: 600;
+  margin: 10px 0;
+}
+#campus-stores [data-checkin] > button {
+  margin-top: 12px;
+}
 #campus-stores .record {
   margin-top: 14px;
   padding: 12px 13px;
@@ -361,6 +434,9 @@ body > main {
   }
   #campus-stores .row {
     gap: 5px;
+  }
+  #campus-stores .stillout {
+    margin-left: 0;
   }
 }
 @media (pointer: coarse) {
